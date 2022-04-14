@@ -1,0 +1,27 @@
+{
+  "name": "red-x-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "start-db": "docker run -d -e POSTGRES_PASSWORD=docker --name postgres -p 5432:5432 --rm -v $HOME/docker/volumes/postgres:/var/lib/postgresql/data postgres",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "view-db": "docker exec -it postgres bash"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sjmcclure2/Red-X.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sjmcclure2/Red-X/issues"
+  },
+  "homepage": "https://github.com/sjmcclure2/Red-X#readme",
+  "dependencies": {
+    "express": "^4.17.3",
+    "knex": "^1.0.7",
+    "nodemon": "^2.0.15"
+  }
+}
