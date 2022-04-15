@@ -9,6 +9,7 @@ async function loginUser(credentials, url) {
     },
     body: JSON.stringify(credentials)
   })
+  .then(data => data.json())
   .catch((err) => {
     console.log(err)
   })
@@ -17,15 +18,15 @@ async function loginUser(credentials, url) {
 function Login( { url, setToken }) {
   const [username, setUserName] = useState();
   const [password, setPassword] = useState();
-
   const handleSubmit = async e => {
     e.preventDefault();
     const token = await loginUser({
       username,
       password
     }, url);
-      if(token.status !== 404)
-        setToken(token)
+    console.log(token)
+    if(token.status !== 404)
+      setToken(token)
   }
 
   return(

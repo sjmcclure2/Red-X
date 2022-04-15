@@ -8,19 +8,23 @@ import AllProjects from './components/allProjects'
 import logo from './logo.svg';
 import './App.css';
 
+function setToken(userToken){
+  sessionStorage.setItem('token', JSON.stringify(userToken));
+}
+
+function getToken(){
+  const tokenString = sessionStorage.getItem('token');
+  const userToken = JSON.parse(tokenString);
+  return userToken?.token
+}
 
  function App () {
 
   const [data, setData] = useState(null);
   const [url, setUrl] = useState('http://localhost:8080/api');
-  const [initData, setInitData] = useState('null');
-  const [token, setToken] = useState();
+  const token = getToken();
 
   useEffect(() => {
-    fetchData(url + '/projects')
-      .then(data => {
-        setInitData(data)
-      })
     fetchData(url)
       .then(data => {
         setData(data)
@@ -29,7 +33,6 @@ import './App.css';
       console.log(err)
     })
   }, []);
-
   if(!token) {
     return <Login url={url} setToken={setToken} />
   }
@@ -38,15 +41,14 @@ import './App.css';
       <Router>
         <Header />
         <Routes>
-          <Route path="/" element={!data ? "Loading..." : <Homepage  data={data}/>}/>
-          <Route path="/Projects/" element={<AllProjects initData={initData} />} />
+          <Route path="/" element={!data ? "Loading..." : <Homepage data={data} />}/>
+          <Route path="/Projects/" element={<AllProjects />} />
           <Route path="/Requests/" element={<Requests />} />
         </Routes>
       </Router>
     </div>
   );
 }
-
 
 async function fetchData(url) {
   const response = await fetch(url)
