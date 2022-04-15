@@ -10,7 +10,7 @@ exports.up = function(knex) {
     table.text('description');
     table.integer('category_id');
     table.foreign('category_id').references('categories.id');
-    table.boolean('isResolved');
+    table.boolean('is_resolved');
     table.integer('priority');
   }));
 };
