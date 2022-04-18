@@ -5,6 +5,7 @@ import Header from './components/header';
 import Requests from './components/request';
 import Login from './components/login';
 import AllProjects from './components/allProjects';
+import ProjectCard from "./components/projectCard";
 import useToken from './components/useToken';
 import logo from './logo.svg';
 import './App.css';
@@ -32,17 +33,18 @@ import './App.css';
       console.log(err)
     })
   }, []);
-  if(!token) {
-    return <Login url={url} setToken={setToken} />
-  }
+  // if(!token) {
+  //   return <Login url={url} setToken={setToken} />
+  // }
   return (
     <div className="App">
       <Router>
         <Header />
         <Routes>
           <Route path="/" element={!data ? "Loading..." : <Homepage data={data} />}/>
-          <Route path="/Projects/" element={<AllProjects />} />
-          <Route path="/Requests/" element={<Requests />} />
+          <Route path="/projects/" element={<AllProjects />} />
+          <Route path="/requests/" element={<Requests />} />
+          <Route path="/projectCard/:id" element={<ProjectCard />}/>
         </Routes>
       </Router>
     </div>

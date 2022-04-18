@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
+import { Link, Route } from 'react-router-dom';
 import ProjectCard from './projectCard'
+//import './A.css'
 
 function AllProjects() {
   const [projectData, setProjectData] = useState([]);
@@ -20,17 +22,16 @@ function AllProjects() {
     console.log('rendered')
   }, [projectData])
 
-  const projects = projectData ? projectData.map(project => <ProjectCard project={project} />) : <p>Loading ...</p>
-
-
-
+  const projects = projectData ? projectData.map(project => 
+    <Link to={`/projectCard/${project.id}`}><li>{project.name}</li></Link>) : 
+    <p>Loading...</p>
 
 
   return(
     <div>
+      {projects}
       <button type="button" onClick={() => page > 1 ? setPage (page-1) : () => {return}}>Previous</button>
       <button type="button" onClick={() => projectData.length < 20 ? () => {return} : setPage (page+1) }>Next</button>
-      {projects}
     </div>
   )
 }
