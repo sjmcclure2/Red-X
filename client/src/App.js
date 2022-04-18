@@ -1,46 +1,53 @@
 import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
+import Homepage from './components/home';
+import Header from './components/header';
+import Requests from './components/request';
+import Login from './components/login';
+import AllProjects from './components/allProjects';
+import useToken from './components/useToken';
 import logo from './logo.svg';
 import './App.css';
 
-
  function App () {
-  
+
   const [data, setData] = useState(null);
-  const [url, setUrl] = useUrl('http://localhost:8080/api')
+  const [url, setUrl] = useState('http://localhost:8080/api');
+  const { token, setToken } = useToken();
+
+  // function isValidToken(token) {
+  //   if(token) {
+  //   if(token.token == 'test123')
+  //     return true
+  //   } else
+  //     return false
+  // }
+
   useEffect(() => {
     fetchData(url)
       .then(data => {
         setData(data)
     })
+    .catch((err) => {
+      console.log(err)
+    })
   }, []);
-
-
+  if(!token) {
+    return <Login url={url} setToken={setToken} />
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>{!data ? "Loading..." : data.message}</p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
       <Router>
+        <Header />
         <Routes>
-          <Route path="/"/>
-          <Route path="/"/>
-          <Route path="/"/>
+          <Route path="/" element={!data ? "Loading..." : <Homepage data={data} />}/>
+          <Route path="/Projects/" element={<AllProjects />} />
+          <Route path="/Requests/" element={<Requests />} />
         </Routes>
       </Router>
     </div>
   );
 }
-
 
 async function fetchData(url) {
   const response = await fetch(url)
