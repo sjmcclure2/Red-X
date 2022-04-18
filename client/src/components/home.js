@@ -1,18 +1,13 @@
-import React from 'react'
+import React from 'react';
+import '../styles/home.css';
 
 
 function Homepage( { data } ) {
   return (
     <header className="App-header">
     <p>{data.message}</p>
-    <a
-      className="App-link"
-      href="https://reactjs.org"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      Learn React
-    </a>
+      <h1 className='home-welcome'>Welcome to Red-X</h1>
+      <h3 className='home-header-3'>A one stop shop for digital solutions</h3>
   </header>
   )
 }
