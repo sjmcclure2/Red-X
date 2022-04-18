@@ -1,6 +1,8 @@
 const express = require('express');
 const knex = require('knex')(require('./../knexfile.js')[process.env.NODE_ENV]);
 
+const { BASE_URL } = require('../index')
+
 const categories = require('./categories');
 const project_owners = require('./project_owners');
 const projects = require('./projects');
@@ -13,16 +15,17 @@ const router = express.Router();
 
 const tables = {};
 
-[ 'categories',
-'project_owners',
-'projects',
-'requests',
-'requests_projects_join',
-'users',
-'users_projects_join'
-].sort().forEach(el => {
-  tables[el] = `http://localhost:8080/api/${el}`
-});
+knex('pg_catalog.pg_tables')
+.select('tablename')
+.where({schemaname:'public'})
+.where('tablename', 'NOT ILIKE', 'knex%')
+.then(data =>
+  data.map(el => el.tablename)
+  .sort()
+  .forEach(el => {
+    tables[el] = `${BASE_URL}/${el}`
+  })
+);
 
 router.get('/', (req, res) => {
   res.json(tables);
