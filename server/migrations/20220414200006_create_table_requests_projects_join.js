@@ -4,7 +4,6 @@
  */
 exports.up = function(knex) {
   return (knex.schema.createTable('requests_projects_join', (table) => {
-    table.increments('id');
     table.integer('request_id');
     table.foreign('request_id').references('requests.id');
     table.integer('project_id');
