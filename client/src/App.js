@@ -2,27 +2,26 @@ import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import Homepage from './components/home';
 import Header from './components/header';
-import Requests from './components/request'
-import Login from './components/login'
-import AllProjects from './components/allProjects'
+import Requests from './components/request';
+import Login from './components/login';
+import AllProjects from './components/allProjects';
+import useToken from './components/useToken';
 import logo from './logo.svg';
 import './App.css';
-
-function setToken(userToken){
-  sessionStorage.setItem('token', JSON.stringify(userToken));
-}
-
-function getToken(){
-  const tokenString = sessionStorage.getItem('token');
-  const userToken = JSON.parse(tokenString);
-  return userToken?.token
-}
 
  function App () {
 
   const [data, setData] = useState(null);
   const [url, setUrl] = useState('http://localhost:8080/api');
-  const token = getToken();
+  const { token, setToken } = useToken();
+
+  // function isValidToken(token) {
+  //   if(token) {
+  //   if(token.token == 'test123')
+  //     return true
+  //   } else
+  //     return false
+  // }
 
   useEffect(() => {
     fetchData(url)

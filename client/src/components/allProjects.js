@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import ProjectCard from './projectCard'
 
-function AllProjects({ initData }) {
+function AllProjects() {
   const [projectData, setProjectData] = useState([]);
   const [page, setPage] = useState(1);
   const [url, setUrl] = useState('http://localhost:8080/api')
