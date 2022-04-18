@@ -33,9 +33,9 @@ exports.seed = async function(knex) {
           avatar_url
         } = p;
         const category_id = Math.trunc(Math.random() * 7) + 1;
-        const status =
-          ['active', 'completed', 'abandoned']
-          [Math.trunc(Math.random() * 3)];
+        const age = (Date.now() - Date.parse(p.last_activity_at))
+          / 1000 / 60 / 60 / 24;
+        const status = age < 180 ? 'active' : 'inactive';
         return {
           id,
           name,
