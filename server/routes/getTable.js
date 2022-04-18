@@ -3,8 +3,8 @@ const knex = require('knex')(require('./../knexfile.js')[process.env.NODE_ENV]);
 
 const router = express.Router();
 
-router.get('/', (req, res) => {
-  knex('project_owners')
+router.get('/', (req, res) => { 
+  knex(req.baseUrl.slice(5))
     // .where('description', '<>', '')
     .limit(req.query.limit ?? 20)
     .offset(req.query.offset ?? 0)
@@ -15,7 +15,7 @@ router.get('/', (req, res) => {
 router.get('/:id', (req, res) => {
   const id = Number(req.params.id);
   if (Number.isInteger(id) && id > 0 && id < 2 ** 31) {
-    knex('project_owners')
+    knex(req.baseUrl.slice(5))
       .where('id', id)
       .then(data => res.json(data))
       .catch(err => console.error(err));
