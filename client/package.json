@@ -20,15 +20,10 @@
     "eject": "react-scripts eject"
   },
   "repository": {
-    "type": "git",
-    "url": "git+https://github.com/sjmcclure2/Red-X.git"
+    "type": "git"
   },
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/sjmcclure2/Red-X/issues"
-  },
-  "homepage": "https://github.com/sjmcclure2/Red-X#readme",
   "eslintConfig": {
     "extends": [
       "react-app",
