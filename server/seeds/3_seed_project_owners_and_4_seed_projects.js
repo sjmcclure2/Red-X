@@ -34,7 +34,7 @@ exports.seed = async function(knex) {
         } = p;
         const category_id = Math.trunc(Math.random() * 7) + 1;
         const age = (Date.now() - Date.parse(p.last_activity_at))
-          / 1000 / 60 / 60 / 24;
+          / 1000 / 60 / 60 / 24; // convert ms to days
         const status = age < 180 ? 'active' : 'inactive';
         return {
           id,
