@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
-import '../App.css';
+import '../styles/header.css';
 
 
 function Header() {
@@ -8,13 +8,17 @@ function Header() {
   return(
     <div className="ruledHeader">
     <header className="Header">
-      <h1 className='HeaderTitle'>RED-X</h1>
+      <Link to='/'>
+        <h1 className='HeaderTitle'>Red-X</h1>
+      </Link>
       <label className="links">
-        <Link to={'/'}>Home</Link> |
-        <Link to={'/Projects/'}> Projects</Link> |
-        <Link to={'/Requests/'}> Requests</Link> |
+          <Link to={'/'}>Home</Link> |
+          <Link to={'/Projects/'}> Projects</Link> |
+          <Link to={'/Requests/'}> Requests</Link> 
       </label>
-      <button type="button">Logout</button>
+      <div className="buttonContainer">
+        <button type="button">Logout</button>
+      </div>
       {/* <Link to={'/UserProfile/'}>UserProfile</Link> */}
 
     </header>

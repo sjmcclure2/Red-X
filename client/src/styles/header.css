@@ -1,0 +1,38 @@
+.Header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  height: 80px;
+  border-bottom: solid 7px maroon;
+  border-bottom-style:double;
+  /* font-size: 2em; */
+  background: bottom url("../../public/background.png"), lightgray;
+}
+
+.Header h1 {
+  font-family: cursive-redx;
+  color:maroon;
+  font-size:40px;
+  text-shadow: 2px 2px black;
+  padding-left: 10px;
+}
+
+.Header h1:hover {
+  transform: scale(1.1);
+}
+
+.Header a {
+  font-family: cursive-redx;
+  color: maroon;
+  font-size: x-large;
+}
+
+.Header a:hover {
+  
+  color: white;
+}
+
+.Header .buttonContainer {
+  padding-right: 10px;
+}

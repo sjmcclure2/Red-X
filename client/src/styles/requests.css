@@ -1,3 +1,52 @@
 .requests {
+  color:maroon;
+}
+
+.requests h1 {
+  font-family: cursive-redx;
+  color: maroon;
+  font-size: 60px;
+  text-shadow: 2px 2px black;
+}
+
+/* .requestLinkContainer {
+  border: 3px solid maroon;
+  width: 9vw;
+  display:inline-block;
+  padding:5px;
+  border-radius: 20px;
+  background-color: lightgray;
+} */
+.requestLinkContainer a {
+  color: maroon;
+  font-size: 30px;
+}
+
+.requestLinkContainer a:hover {
+  text-decoration: underline;
+}
+
+.requests button {
+  border: 2px solid maroon;
+  color: maroon;
+  border-radius: 50px;
+  /* color:red; */
+  display: inline-block;
+  width: 8vw;
+  height:4.5vh;
+  margin: 20px 125px;
+  background-color: lightgray;
+}
+
+.requests button:hover {
   color:white;
+  transform: scale(1.1);
+  transition: all 300ms;
+}
+
+.requests table {
+  text-align: left;
+  float: left;
+  padding-left: 100px;
+  padding-right: 100px;
 }
