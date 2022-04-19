@@ -1,0 +1,89 @@
+.projects {
+  padding-inline-start: none;
+}
+
+.listCards {
+  border: 5px solid black;
+}
+
+.projectLinks {
+  
+}
+
+.listCards button {
+  border: 2px solid maroon;
+  color: black;
+  border-radius: 50px;
+  /* color:red; */
+  display: inline-block;
+  width: 8vw;
+  height:4.5vh;
+  margin: 20px 200px;
+  background-size: 100% 197.9%;
+    background-image: linear-gradient(to top, #17141d 50%, maroon 50%);
+    -webkit-transition: background-position .1s;
+    -moz-transition: background-position .1s;
+    transition: background-position .1s;
+}
+
+.listCards button:hover {
+  color:maroon;
+  background-position: 0 -100%;
+  text-shadow: 0px 0px 3px red;
+  box-shadow: 0px 0px 3px red;
+}
+
+.listCards h1 {
+  color: white;
+  text-decoration: underline;
+}
+
+.cardContainer {
+  display: grid;
+  columns: auto auto;
+}
+
+a {
+  color:white;
+  text-decoration: none;
+}
+
+a:hover{
+  color:maroon;
+}
+
+/* a {
+  color:white;
+  background-image: linear-gradient(
+    to right,
+    maroon,
+    maroon 50%,
+    white 50%
+  );
+  background-size: 200% 100%;
+  background-position: -100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+a:hover {
+  background-position: 0;
+ }
+
+ a:hover::before {
+  width: 100%;
+}
+
+a {
+  background-image: linear-gradient(
+    to right,
+    maroon,
+    maroon 50%,
+    white 50%
+  );
+  background-size: 200% 100%;
+  background-position: -100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: all 0.3s ease-in-out;
+} */

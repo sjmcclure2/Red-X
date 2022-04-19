@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link, Route } from 'react-router-dom';
-import ProjectCard from './projectCard'
-//import './A.css'
+import ProjectCard from './projectCard';
+import '../styles/projects.css'
 
 function AllProjects() {
   const [projectData, setProjectData] = useState([]);
@@ -23,15 +23,22 @@ function AllProjects() {
   }, [projectData])
 
   const projects = projectData ? projectData.map(project => 
-    <Link to={`/projectCard/${project.id}`}><li>{project.name}</li></Link>) : 
+    <Link to={`/projectCard/${project.id}`}><div>{project.name}</div></Link>) : 
     <p>Loading...</p>
 
 
   return(
-    <div>
-      {projects}
-      <button type="button" onClick={() => page > 1 ? setPage (page-1) : () => {return}}>Previous</button>
-      <button type="button" onClick={() => projectData.length < 20 ? () => {return} : setPage (page+1) }>Next</button>
+    <div className='listCards'>
+      <h1>Projects</h1>
+      <div className='projectLinks'>
+        {projects}
+      </div>
+        <div className='cardContainer'>
+          <div>
+            <button type="button" onClick={() => page > 1 ? setPage (page-1) : () => {return}}>Previous</button>        
+            <button type="button" onClick={() => projectData.length < 20 ? () => {return} : setPage (page+1) }>Next</button>
+          </div>             
+        </div>
     </div>
   )
 }
@@ -41,3 +48,4 @@ async function fetchData(url) {
   return data
 }
 export default AllProjects;
+
