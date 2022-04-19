@@ -5,14 +5,24 @@
 
 .card {
   border-radius: 20px;
-  width: 60vw;
+  border: solid 8px maroon;
+  border-style: double;
+  width: 500px;
   min-width: 1000px;
-  top: 50%;
-  left: 50%;
+  top: 35%;
+  left: 200px;
+  position: absolute;
   margin-left: 250px;
-  background-color: rgb(156, 156, 156);
+  background-color: white;
+  color: maroon;
+  font-size: 20px;
 }
 
-.card:hover {
-  background: linear-gradient(to bottom right, gray, white);
+.card a{
+  color:maroon;
+  text-decoration: underline;
+  transform: scale(1.1);
 }
+/* .card:hover {
+  background: linear-gradient(to bottom right, gray, white);
+} */

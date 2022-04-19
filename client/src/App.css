@@ -1,20 +1,20 @@
+@font-face {
+  font-family: "cursive-redx";
+  src: url("../public/DancingScript-VariableFont_wght.ttf")
+}
+
 body {
-  background: #17141d;
-  /* background: #342a28; */
-  background-size: cover;
+  background:  #FFFBF0;
+  /* background: ; */
+  /* background-size: cover; */
 }
 
 .App {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
 .App-header {
-  background-color: #342a28;
+  background-color: #fffbf0;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -22,11 +22,24 @@ body {
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  /* margin-top: -14.5px; */
 }
 
-.App-link {
-  color: #61dafb;
+.App-header .home-welcome {
+  font-family: cursive-redx;
+  color: maroon;
+  font-size: 75px;
+  text-shadow: 3px 3px black;
 }
-.Header {
-  background-color: lightgray;
+
+.App-header .home-header-3 {
+  color:black;
+  font-size: 20px;
 }
+
+/* .banner {
+  width: 100%;
+  height: 400px;
+  background: ;
+  background-position: center;
+} */
