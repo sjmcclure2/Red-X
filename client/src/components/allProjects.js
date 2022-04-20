@@ -24,7 +24,7 @@ function AllProjects() {
 
   const projects = projectData ? projectData.map(project => 
     
-    <div className='linkedProjects'><Link to={`/projectCard/${project.id}`}><div>{project.name}</div></Link></div>) : 
+    <div className='linkedProjects'><Link to={`/projects/${project.id}`}><div>{project.name}</div></Link></div>) : 
     <p>Loading...</p>
 
 

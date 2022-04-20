@@ -6,6 +6,7 @@ const { BASE_URL } = require('../index')
 const getTable = require('./getTable');
 const usersPublic = require('./usersPublic')
 const requests = require('./requests')
+const search = require('./search')
 const router = express.Router();
 
 const tables = {};
@@ -25,6 +26,7 @@ router.get('/', (req, res) => {
 
 router.use([ '/categories', '/project_owners', '/projects' ], getTable);
 router.use('/requests', requests);
+router.use('/search', search);
 router.use('/users', usersPublic);
 
 module.exports = router;

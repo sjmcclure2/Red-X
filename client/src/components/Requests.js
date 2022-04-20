@@ -42,19 +42,24 @@ function Requests() {
 
   const [ page, setPage ] = useState(1);
   const [ requests, setRequests ] = useState([]);
-  // const [ users, setUsers ] = useState([]);
-  // const [ categories, setCategories ] = useState([]);
   
   useEffect(() => { 
     fetchJSON(`${BASE_URL}/requests?offset=${(page - 1) * 20}`)
+    // .then(requests => {
+    //   const promiseArray = []
+    //   console.log('before map', requests);
+    //    requests.forEach(request => {
+    //     promiseArray.push(fetchJSON(`${BASE_URL}/users/${request.user_id}`)
+    //     .then(([{username}]) => ({ ...request, username })
+    //     ))
+    //   return Promise.all(promiseArray)
+    //   })
+    // })
     .then(requests => {
-      return requests.map(request => {
-        fetchJSON(`${BASE_URL}/users/${request.user_id}`)
-        .then(([{username}]) => request.username = username);
-        return request;
-      })
-    })
-    .then(requests => {
+      // console.log(requests);
+      // console.log(requests[0]);
+      // console.log(requests[0].user_id);
+      // console.log(requests[0].username);
       setRequests(requests);
     })
     .catch((err) => { 
@@ -80,7 +85,7 @@ function Requests() {
           </tr>
         </thead>
         <tbody>
-          { requests.map((request, index) => 
+          { requests?.map(request =>
             <tr key={request.id}>
               <td><Link to={`${request.id}`}>{request.id}</Link></td>
               <td><Link to={`${request.id}`}>{request.title}</Link></td>
@@ -89,7 +94,7 @@ function Requests() {
               <td>
                 <Link to={`/users/${request.user_id}`}>
                   {request.user_id}
-                  {request.username}
+                  {/* {request.username} */}
                 </Link>
               </td>
             </tr>
