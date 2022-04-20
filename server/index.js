@@ -2,8 +2,8 @@ const express = require('express');
 const morgan = require('morgan');
 const cors = require('cors');
 
-const PORT = 8080;
-const HOST = 'localhost';
+const PORT = 25060;
+const HOST = 'db-postgresql-red-x-do-user-10648499-0.b.db.ondigitalocean.com';
 const BASE_URL = `http://${HOST}:${PORT}/api`;
 module.exports.BASE_URL = BASE_URL;
 

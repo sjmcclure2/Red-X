@@ -27,11 +27,12 @@ module.exports = {
   },
 
   production: {
-    client: 'postgresql',
+    client: 'pg',
     connection: {
-      database: 'my_db',
-      user:     'username',
-      password: 'password'
+      database: 'defaultdb',
+      user: 'doadmin',
+      password: ' AVNS_hhtUAZF8m-67MHs',
+      host: 'db-postgresql-red-x-do-user-10648499-0.b.db.ondigitalocean.com'
     },
     pool: {
       min: 2,
