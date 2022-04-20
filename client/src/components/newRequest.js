@@ -6,7 +6,7 @@ function NewRequest() {
 
 
 return(
-  <div>
+  <div className='newRequest'>
     <h1>New Request</h1>
     <form action={BASE_URL + '/requests'} method='post'>
       <label>
@@ -23,7 +23,7 @@ return(
           name="description"
           cols="80"
           minLength="40"
-          placeholder="Describe your request"
+          placeholder="Describe your request."
           rows="10"
           required
         />

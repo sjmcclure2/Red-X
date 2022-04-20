@@ -14,7 +14,7 @@ exports.seed = async function(knex) {
     const last_name = faker.name.lastName();
     const provider = ['us.af.mil', 'dod.mil', 'spaceforce.mil'][Math.trunc(Math.random() * 3)];
     await knex('users').insert({
-      id: i,
+      // id: i, // Don't specify 'id' here - it breaks auto-incrementing later!
       username: faker.internet.userName(first_name, last_name),
       password_hash: faker.internet.password(),
       email: `${first_name}.${last_name}@${provider}`,

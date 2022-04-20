@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 import '../styles/header.css';
+import { BASE_URL, fetchJSON } from '../App';
 
 
 function Header() {
@@ -13,16 +14,24 @@ function Header() {
       </Link>
       <label className="links">
           <Link to={'/'}>Home</Link> |
-          <Link to={'/Projects/'}> Projects</Link> |
-          <Link to={'/Requests/'}> Requests</Link> 
+          <Link to={'/projects/'}> Projects</Link> |
+          <Link to={'/requests/'}> Requests</Link> 
       </label>
       <div className="buttonContainer">
-        <button type="button">Logout</button>
+        <form action="/search">
+          <input
+            type="search"
+            name="query"
+            placeholder="Search..."
+            required
+          />
+          <button>Search</button>
+        </form>
       </div>
       {/* <Link to={'/UserProfile/'}>UserProfile</Link> */}
 
     </header>
-    <hr className='Rule'/>
+    {/* <hr className='Rule'/> */}
   </div>
   )
 }
