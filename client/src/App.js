@@ -11,14 +11,13 @@ import ProjectCard from "./components/projectCard";
 import NewRequest from "./components/newRequest";
 import './App.css';
 
-export const BASE_URL = 'http://localhost:8080/api';
+export const BASE_URL = 'https://red-x-server.herokuapp.com/api';
 
 export const fetchJSON = url => fetch(url).then(r => r.json());
 
 function App () {
 
   const [ data, setData ] = useState(null);
-  const [ url ] = useState('http://localhost:8080/api');
   // const { token, setToken } = useToken();
 
   // function isValidToken(token) {
@@ -30,14 +29,14 @@ function App () {
   // }
 
   useEffect(() => {
-    fetchData(url)
+    fetchData(BASE_URL)
       .then(data => {
         setData(data)
     })
     .catch((err) => {
       console.log(err)
     })
-  }, [url]);
+  }, [BASE_URL]);
   // if(!token) {
   //   return <Login url={url} setToken={setToken} />
   // }

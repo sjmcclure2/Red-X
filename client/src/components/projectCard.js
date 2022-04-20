@@ -1,20 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation, useParams } from 'react-router-dom';
 import { assignCategory } from './Requests';
-import '../styles/card.css'
+import '../styles/card.css';
+import { BASE_URL } from '../App';
 
 function ProjectCard() {
   const {id} = useParams();
   const [project, setProject] = useState([]);
   const [projectOwner, setProjectOwner] = useState();
-  const [url, setUrl] = useState('http://localhost:8080/api');
 
   useEffect(() => {
-    fetchData(url + `/projects/${id}`)
+    fetchData(BASE_URL + `/projects/${id}`)
     .then(data => {
       setProject(data)
     })
-    .then(fetchData(url + `/project_owners/${id}`)
+    .then(fetchData(BASE_URL + `/project_owners/${id}`)
       .then(data => {
         setProjectOwner(data)
       })

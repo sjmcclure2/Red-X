@@ -2,7 +2,7 @@ const express = require('express');
 const morgan = require('morgan');
 const cors = require('cors');
 
-const PORT = 8080;
+const PORT = 4000;
 const HOST = 'https://red-x-server.herokuapp.com';
 const BASE_URL = `http://${HOST}:${PORT}/api`;
 module.exports.BASE_URL = BASE_URL;
@@ -30,6 +30,6 @@ app.use((req, res) => {
   res.sendStatus(404);
 });
 
-app.listen(PORT, () => {
-  console.log(`API server running at ${BASE_URL}`)
+app.listen(process.env.PORT || PORT, () => {
+  console.log(`API server running at port ${PORT}`)
 });
