@@ -1,30 +1,28 @@
 import React, { useEffect, useState } from "react";
-import { Link, Route } from 'react-router-dom';
-import ProjectCard from './projectCard';
+import { Link } from 'react-router-dom';
 import '../styles/projects.css'
+import { BASE_URL, fetchJSON } from "../App";
 
-function AllProjects() {
+export default function Projects() {
   const [projectData, setProjectData] = useState([]);
   const [page, setPage] = useState(1);
-  const [url, setUrl] = useState('http://localhost:8080/api')
+
   useEffect(() => {
-    fetchData(url + `/projects?limit=20&offset=${20*(page-1)}`)
-    .then(data => {
-      console.log(projectData.length)
-      setProjectData(data)
-    })
+    fetchJSON(`${BASE_URL}/projects?limit=20&offset=${20*(page-1)}`)
+    .then(data => setProjectData(data))
     .catch((err) => {
       console.log(err);
     })
-  },[page]);
+  }, [ page ]);
 
-  useEffect(() => {
-    console.log('rendered')
-  }, [projectData])
-
-  const projects = projectData ? projectData.map(project => 
-    
-    <div className='linkedProjects'><Link to={`/projects/${project.id}`}><div>{project.name}</div></Link></div>) : 
+  const projects = projectData ?
+    projectData.map(project => 
+    <div className='linkedProjects' key={project.id}>
+      <Link to={`/projects/${project.id}`}>
+        <div>{project.name}</div>
+      </Link>
+    </div>
+    ) : 
     <p>Loading...</p>
 
 
@@ -42,11 +40,4 @@ function AllProjects() {
         </div>
     </div>
   )
-}
-async function fetchData(url) {
-  const response = await fetch(url)
-  let data = await response.json();
-  return data
-}
-export default AllProjects;
-
+};

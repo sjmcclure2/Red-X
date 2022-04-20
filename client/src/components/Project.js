@@ -1,20 +1,20 @@
 import React, { useState, useEffect } from 'react';
-import { useLocation, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
+import { BASE_URL, fetchJSON } from '../App';
 import { assignCategory } from './Requests';
 import '../styles/card.css'
 
-function ProjectCard() {
+export default function Project() {
   const {id} = useParams();
   const [project, setProject] = useState([]);
   const [projectOwner, setProjectOwner] = useState();
-  const [url, setUrl] = useState('http://localhost:8080/api');
 
   useEffect(() => {
-    fetchData(url + `/projects/${id}`)
+    fetchJSON(`${BASE_URL}/projects/${id}`)
     .then(data => {
       setProject(data)
     })
-    .then(fetchData(url + `/project_owners/${id}`)
+    .then(fetchJSON(`${BASE_URL}/project_owners/${id}`)
       .then(data => {
         setProjectOwner(data)
       })
@@ -40,11 +40,3 @@ function ProjectCard() {
     </div>
   )
 }
-
-async function fetchData(url) {
-  const response = await fetch(url)
-  let data = await response.json();
-  return data
-}
-
-export default ProjectCard;
