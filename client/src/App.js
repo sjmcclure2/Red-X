@@ -10,7 +10,7 @@ import Request from './components/Request';
 import NewRequest from "./components/NewRequest";
 import Search from './components/Search';
 // import Users from './components/Users';
-// import User from './components/User';
+import User from './components/User';
 // import useToken from './components/useToken';
 // import logo from './logo.svg';
 import './App.css';
@@ -48,7 +48,7 @@ export default function App () {
           <Route path="/requests/:id" element={<Request />} />
           <Route path="/requests/new" element={<NewRequest />}/>
           {/* <Route path="/users" element={<Users />}/> */}
-          {/* <Route path="/users/:id" element={<User />}/> */}
+          <Route path="/users/:id" element={<User />}/>
           <Route path="/search" element={<Search />}/>
         </Routes>
       </Router>

@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 import '../styles/header.css';
-import { BASE_URL, fetchJSON } from '../App';
+// import { BASE_URL, fetchJSON } from '../App';
 
 
 function Header() {
