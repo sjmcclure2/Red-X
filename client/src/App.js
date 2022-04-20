@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Homepage from './components/home';
-import Header from './components/header';
+import Homepage from './components/Home';
+import Header from './components/Header';
 import Requests from './components/Requests';
 import Request from './components/Request';
 import Search from './components/Search';
@@ -10,7 +10,7 @@ import Projects from './components/Projects';
 import Project from "./components/Project";
 // import useToken from './components/useToken';
 // import logo from './logo.svg';
-import NewRequest from "./components/newRequest";
+import NewRequest from "./components/NewRequest";
 import './App.css';
 
 export const BASE_URL = 'http://localhost:8080/api';
