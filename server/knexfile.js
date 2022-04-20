@@ -29,10 +29,10 @@ module.exports = {
   production: {
     client: 'pg',
     connection: {
-      database: 'defaultdb',
-      user: 'doadmin',
-      password: ' AVNS_hhtUAZF8m-67MHs',
-      host: 'db-postgresql-red-x-do-user-10648499-0.b.db.ondigitalocean.com'
+      database: 'd48mva4jd8v0gn',
+      user: 'sjgxgkfelwdjou',
+      password: 'bab58abbabc96fcc6c8a5b9886b261450112a2b27945374d9b0daf0a23819371',
+      host: 'ec2-23-20-224-166.compute-1.amazonaws.com'
     },
     pool: {
       min: 2,
