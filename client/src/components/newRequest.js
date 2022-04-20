@@ -18,6 +18,17 @@ return(
           autoFocus/>
       </label>
       <label>
+        <p>User</p>
+        <input
+          type="number"
+          max="10000"
+          min="1"
+          name="user_id"
+          placeholder="Please enter your user ID"
+          required
+        />
+      </label>
+      <label>
         <p>Description</p>
         <textarea
           name="description"

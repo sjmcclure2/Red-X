@@ -25,19 +25,17 @@ router.get('/:id', (req, res) => {
 });
 
 router.post('/', (req, res) => {
-  console.log(req.body);
   knex('requests')
-    .insert(req.body)
+    .insert({
+      ...req.body,
+      is_resolved: false
+    })
     .returning('id')
-    .then(id => res.redirect(201, `/requests/${id}`));
+    .then(([ { id } ]) => {
+      console.log('Created new request', id);
+      res.redirect(`${req.get('referrer')}requests/${id}`);
+    })
+    .catch(err => console.error(err));
 })
-
-
-// {
-//   title: 'TCMax keeps failing',
-//   description: 'its broken, fix it',
-//   category_id: '2',
-//   priority: '1'
-// }
 
 module.exports = router;
