@@ -13,13 +13,11 @@ import ProjectCard from "./components/projectCard";
 import NewRequest from "./components/newRequest";
 import './App.css';
 
-export const BASE_URL = 'http://localhost:8080/api';
+export const BASE_URL = 'https://red-x-server.herokuapp.com/api';
 
 export const fetchJSON = url => fetch(url).then(r => r.json());
 
 function App () {
-
-
   // const { token, setToken } = useToken();
 
   // function isValidToken(token) {
@@ -29,7 +27,6 @@ function App () {
   //   } else
   //     return false
   // }
-
 
   // if(!token) {
   //   return <Login url={url} setToken={setToken} />
