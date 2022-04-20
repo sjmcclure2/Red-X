@@ -2,22 +2,24 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Homepage from './components/Home';
 import Header from './components/Header';
-import Requests from './components/Requests';
-import Request from './components/Request';
-import Search from './components/Search';
 // import Login from './components/login';
 import Projects from './components/Projects';
 import Project from "./components/Project";
+import Requests from './components/Requests';
+import Request from './components/Request';
+import NewRequest from "./components/NewRequest";
+import Search from './components/Search';
+// import Users from './components/Users';
+// import User from './components/User';
 // import useToken from './components/useToken';
 // import logo from './logo.svg';
-import NewRequest from "./components/NewRequest";
 import './App.css';
 
 export const BASE_URL = 'http://localhost:8080/api';
 
 export const fetchJSON = url => fetch(url).then(r => r.json());
 
-function App () {
+export default function App () {
 
 
   // const { token, setToken } = useToken();
@@ -44,12 +46,12 @@ function App () {
           <Route path="/projects/:id" element={<Project />}/>
           <Route path="/requests/" element={<Requests />} />
           <Route path="/requests/:id" element={<Request />} />
-          <Route path="/requests/newRequest" element={<NewRequest />}/>
+          <Route path="/requests/new" element={<NewRequest />}/>
+          {/* <Route path="/users" element={<Users />}/> */}
+          {/* <Route path="/users/:id" element={<User />}/> */}
           <Route path="/search" element={<Search />}/>
         </Routes>
       </Router>
     </div>
   );
-}
-
-export default App;
+};

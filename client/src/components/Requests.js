@@ -71,7 +71,7 @@ function Requests() {
     <div className='requests'>
       <h1>Requests</h1>
       <div className='requestLinkContainer'>
-        <Link to='newRequest'>Submit a new request</Link>
+        <Link to='new'>Submit a new request</Link>
       </div>
 
       <table>
