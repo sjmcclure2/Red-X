@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { Link, Route } from 'react-router-dom';
 import ProjectCard from './projectCard';
-import '../styles/projects.css'
+import '../styles/projects.css';
+import {BASE_URL} from '../App';
 
 function AllProjects() {
   const [projectData, setProjectData] = useState([]);
   const [page, setPage] = useState(1);
-  const [url, setUrl] = useState('http://localhost:8080/api')
   useEffect(() => {
-    fetchData(url + `/projects?limit=20&offset=${20*(page-1)}`)
+    fetchData(BASE_URL + `/projects?limit=20&offset=${20*(page-1)}`)
     .then(data => {
       console.log(projectData.length)
       setProjectData(data)
@@ -24,7 +24,7 @@ function AllProjects() {
 
   const projects = projectData ? projectData.map(project => 
     
-    <div className='linkedProjects'><Link to={`/projectCard/${project.id}`}><div>{project.name}</div></Link></div>) : 
+    <div className='linkedProjects'><Link to={`/projects/${project.id}`}><div>{project.name}</div></Link></div>) : 
     <p>Loading...</p>
 
 

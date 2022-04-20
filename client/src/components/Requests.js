@@ -42,19 +42,24 @@ function Requests() {
 
   const [ page, setPage ] = useState(1);
   const [ requests, setRequests ] = useState([]);
-  // const [ users, setUsers ] = useState([]);
-  // const [ categories, setCategories ] = useState([]);
   
   useEffect(() => { 
     fetchJSON(`${BASE_URL}/requests?offset=${(page - 1) * 20}`)
+    // .then(requests => {
+    //   const promiseArray = []
+    //   console.log('before map', requests);
+    //    requests.forEach(request => {
+    //     promiseArray.push(fetchJSON(`${BASE_URL}/users/${request.user_id}`)
+    //     .then(([{username}]) => ({ ...request, username })
+    //     ))
+    //   return Promise.all(promiseArray)
+    //   })
+    // })
     .then(requests => {
-      return requests.map(request => {
-        fetchJSON(`${BASE_URL}/users/${request.user_id}`)
-        .then(([{username}]) => request.username = username);
-        return request;
-      })
-    })
-    .then(requests => {
+      // console.log(requests);
+      // console.log(requests[0]);
+      // console.log(requests[0].user_id);
+      // console.log(requests[0].username);
       setRequests(requests);
     })
     .catch((err) => { 
@@ -66,31 +71,34 @@ function Requests() {
     <div className='requests'>
       <h1>Requests</h1>
       <div className='requestLinkContainer'>
-        <Link to="/requests/newRequest">Submit a new request</Link>
+        <Link to='newRequest'>Submit a new request</Link>
       </div>
 
-      <table width="100%">
+      <table>
         <thead>
           <tr>
-            <th>Request</th>
+            <th>#</th>
+            <th>Title</th>
             <th>Category</th>
             <th>Priority</th>
             <th>User</th>
           </tr>
         </thead>
         <tbody>
-          { requests.map((request, index) => 
-              <tr key={request?.id}>
-                <td>{request?.description}</td>
-                <td>{assignCategory(request?.category_id)}</td>
-                <td>{assignPriority(request?.priority)}</td>
-                <td>
-                  {request?.user_id}
-                  {request?.username}
-                </td>
-              </tr> 
-            )
-          }
+          { requests?.map(request =>
+            <tr key={request.id}>
+              <td><Link to={`${request.id}`}>{request.id}</Link></td>
+              <td><Link to={`${request.id}`}>{request.title}</Link></td>
+              <td>{assignCategory(request.category_id)}</td>
+              <td>{assignPriority(request.priority)}</td>
+              <td>
+                <Link to={`/users/${request.user_id}`}>
+                  {request.user_id}
+                  {/* {request.username} */}
+                </Link>
+              </td>
+            </tr>
+          )}
         </tbody>
       </table>
       <button type='button' onClick={() => page > 1 ? setPage (page-1) : () => {return}}>Previous</button>

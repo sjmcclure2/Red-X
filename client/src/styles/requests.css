@@ -2,6 +2,16 @@
   color:maroon;
 }
 
+.requests a {
+  color:maroon;
+  text-decoration: underline;
+}
+
+.requests a:hover {
+  color: white;
+  transition: all 300ms;
+}
+
 .requests h1 {
   font-family: cursive-redx;
   color: maroon;
@@ -9,20 +19,29 @@
   text-shadow: 2px 2px black;
 }
 
-/* .requestLinkContainer {
-  border: 3px solid maroon;
-  width: 9vw;
-  display:inline-block;
-  padding:5px;
-  border-radius: 20px;
-  background-color: lightgray;
-} */
+.requestLinkContainer {
+  margin-bottom: 50px;
+}
+
 .requestLinkContainer a {
   color: maroon;
-  font-size: 30px;
+  font-size: 25px;
+  border: 3px solid maroon;
+  background-color: lightgray;
+  border-radius:30px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 5px;
+  padding-bottom: 8px;
+  box-shadow: 3px 3px 0px 0px black;
+  text-decoration: none;
 }
 
 .requestLinkContainer a:hover {
+  color: white;
+  box-shadow: 3px 3px 0px 0px black;
+  transform: scale(1.1);
+  transition: all 300ms;
   text-decoration: underline;
 }
 
@@ -45,8 +64,30 @@
 }
 
 .requests table {
-  text-align: left;
-  float: left;
-  padding-left: 100px;
-  padding-right: 100px;
+  border: solid maroon 1px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: lightgray;
+  margin-bottom: 25px;
+  border-radius: 5px;
+  border-style: ridge;
+}
+
+.requests td, .requests th {
+  border: solid maroon 1px;
+  padding: 0.5em
+}
+
+.newRequest p {
+  color: maroon;
+  font-size: 20px;
+  /* text-decoration: underline; */
+}
+
+.newRequest h1 {
+  color: maroon;
+  font-family: cursive-redx;
+  font-size: 60px;
+  text-shadow: 2px 2px black;  
 }
