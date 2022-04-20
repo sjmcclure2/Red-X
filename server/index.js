@@ -3,8 +3,8 @@ const morgan = require('morgan');
 const cors = require('cors');
 
 const PORT = 8080;
-const HOST = 'localhost';
-const BASE_URL = `http://${HOST}:${PORT}/api`;
+const HOST = 'http://localhost';
+const BASE_URL = `${HOST}:${PORT}/api`;
 module.exports.BASE_URL = BASE_URL;
 
 const api = require('./routes/api');
