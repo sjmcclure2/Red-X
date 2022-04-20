@@ -24,7 +24,6 @@ function ProjectCard() {
     })
   },[]);
 
-  console.log(project);
   return(
     <div className='cardHolder'>
       <div className='card'>
