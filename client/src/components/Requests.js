@@ -66,13 +66,14 @@ function Requests() {
     <div className='requests'>
       <h1>Requests</h1>
       <div className='requestLinkContainer'>
-        <Link to="/requests/newRequest">Submit a new request</Link>
+        <Link to='newRequest'>Submit a new request</Link>
       </div>
 
-      <table width="100%">
+      <table>
         <thead>
           <tr>
-            <th>Request</th>
+            <th>#</th>
+            <th>Title</th>
             <th>Category</th>
             <th>Priority</th>
             <th>User</th>
@@ -80,17 +81,19 @@ function Requests() {
         </thead>
         <tbody>
           { requests.map((request, index) => 
-              <tr key={request?.id}>
-                <td>{request?.description}</td>
-                <td>{assignCategory(request?.category_id)}</td>
-                <td>{assignPriority(request?.priority)}</td>
-                <td>
-                  {request?.user_id}
-                  {request?.username}
-                </td>
-              </tr> 
-            )
-          }
+            <tr key={request.id}>
+              <td><Link to={`${request.id}`}>{request.id}</Link></td>
+              <td><Link to={`${request.id}`}>{request.title}</Link></td>
+              <td>{assignCategory(request.category_id)}</td>
+              <td>{assignPriority(request.priority)}</td>
+              <td>
+                <Link to={`/users/${request.user_id}`}>
+                  {request.user_id}
+                  {request.username}
+                </Link>
+              </td>
+            </tr>
+          )}
         </tbody>
       </table>
       <button type='button' onClick={() => page > 1 ? setPage (page-1) : () => {return}}>Previous</button>
