@@ -15,13 +15,17 @@ import User from './components/User';
 // import logo from './logo.svg';
 import './App.css';
 
-export const BASE_URL = 'http://localhost:8080/api';
+export const BASE_URL = 'https://red-x-server.herokuapp.com/api';
 
 export const fetchJSON = url => fetch(url).then(r => r.json());
 
+<<<<<<< HEAD
 export default function App () {
 
 
+=======
+function App () {
+>>>>>>> 42cc8e3bedbf61c0d7a55f2fa56d7b4665193b48
   // const { token, setToken } = useToken();
 
   // function isValidToken(token) {
@@ -31,7 +35,6 @@ export default function App () {
   //   } else
   //     return false
   // }
-
 
   // if(!token) {
   //   return <Login url={url} setToken={setToken} />
