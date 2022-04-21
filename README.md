@@ -78,4 +78,4 @@ npm start
 ```
 
 ## Contributing
-We should add here that we used, aka projects/repo owners from Platform One as our source of data. 
+[Platform One](https://repo1.dso.mil/explore)

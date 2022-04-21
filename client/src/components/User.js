@@ -18,7 +18,7 @@ export default function User() {
   }, [ id ]);
 
   return (
-    <div className='cardHolder'>
+    <>
       {user.id ? 
       <div className='card'>
           <p>ID: {user.id}</p>
@@ -26,6 +26,6 @@ export default function User() {
       </div> :
       <div>Loading....</div>
       }
-    </div>
+    </>
   );
 };

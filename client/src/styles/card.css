@@ -4,18 +4,18 @@
 }
 
 .card {
+  align-self: center;
   border-radius: 20px;
   border: solid 8px maroon;
   border-style: double;
-  width: 500px;
-  min-width: 1000px;
-  top: 35%;
-  left: 160px;
+  min-width: 500px;
+  max-width: 1000px;
   position: absolute;
-  margin-left: 250px;
+  margin: 50px;
   background-color: lightgray;
   color: black;
   font-size: 20px;
+  padding: 15px;
 }
 
 .card a{

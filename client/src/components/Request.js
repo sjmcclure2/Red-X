@@ -24,7 +24,7 @@ export default function Request() {
   }, [ id ]);
 
   return(
-    <div className='cardHolder'>
+    <>
       {request.id ? 
       <div className='card'>
           <p>Title: {request.title}</p>
@@ -33,8 +33,8 @@ export default function Request() {
           <p>Description: {request.description}</p>
           <p>Category: {assignCategory(request.category)}</p>
           <p>Priority: {assignPriority(request.priority)}</p>
-          <p>Status: {request.is_resolved.toString()}</p>
+          <p>Status: {request.is_resolved ? 'Resolved' : 'Unresolved'}</p>
       </div>: <div>Loading....</div>}
-    </div>
+    </>
   )
 }

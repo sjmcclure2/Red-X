@@ -1,9 +1,10 @@
 .Header {
+  height: 10vh;
+  box-sizing: border-box;
   display: flex;
   justify-content: space-between;
   align-items: center;
   color: white;
-  height: 80px;
   border-bottom: solid 7px maroon;
   border-bottom-style:double;
   background: bottom/cover url("../../public/coffee.png"), lightgray;
@@ -33,5 +34,5 @@
 }
 
 .Header .buttonContainer {
-  padding-right: 10px;
+  margin: 10px;
 }

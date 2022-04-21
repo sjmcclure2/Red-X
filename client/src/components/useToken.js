@@ -1,3 +1,4 @@
+//currently not being utilized, this was a stretch goal to work with login
 import { useState } from 'react';
 
 export default function useToken() {

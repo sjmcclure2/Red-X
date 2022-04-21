@@ -12,24 +12,18 @@ import Search from './components/Search';
 // import Users from './components/Users';
 import User from './components/User';
 // import useToken from './components/useToken';
-// import logo from './logo.svg';
 import './App.css';
 
-export const BASE_URL = 'http://localhost:8080/api';
+export const BASE_URL = {
+  development: 'http://localhost:8080/api',
+  production: 'https://red-x-server.herokuapp.com/api'
+}[process.env.NODE_ENV];
 
 export const fetchJSON = url => fetch(url).then(r => r.json());
 
 export default function App () {
 
   // const { token, setToken } = useToken();
-
-  // function isValidToken(token) {
-  //   if(token) {
-  //   if(token.token == 'test123')
-  //     return true
-  //   } else
-  //     return false
-  // }
 
   // if(!token) {
   //   return <Login url={url} setToken={setToken} />
@@ -38,17 +32,19 @@ export default function App () {
     <div className="App">
       <Router>
         <Header />
-        <Routes>
-          <Route path="/" element={<Homepage />}/>
-          <Route path="/projects/" element={<Projects />} />
-          <Route path="/projects/:id" element={<Project />}/>
-          <Route path="/requests/" element={<Requests />} />
-          <Route path="/requests/:id" element={<Request />} />
-          <Route path="/requests/new" element={<NewRequest />}/>
-          {/* <Route path="/users" element={<Users />}/> */}
-          <Route path="/users/:id" element={<User />}/>
-          <Route path="/search" element={<Search />}/>
-        </Routes>
+        <main>
+          <Routes>
+            <Route path="/" element={<Homepage />}/>
+            <Route path="/projects/" element={<Projects />} />
+            <Route path="/projects/:id" element={<Project />}/>
+            <Route path="/requests/" element={<Requests />} />
+            <Route path="/requests/:id" element={<Request />} />
+            <Route path="/requests/new" element={<NewRequest />}/>
+            {/* <Route path="/users" element={<Users />}/> */}
+            <Route path="/users/:id" element={<User />}/>
+            <Route path="/search" element={<Search />}/>
+          </Routes>
+        </main>
       </Router>
     </div>
   );

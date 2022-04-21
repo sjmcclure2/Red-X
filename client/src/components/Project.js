@@ -7,36 +7,27 @@ import '../styles/card.css';
 export default function Project() {
   const {id} = useParams();
   const [project, setProject] = useState([]);
-  const [projectOwner, setProjectOwner] = useState();
 
   useEffect(() => {
     fetchJSON(`${BASE_URL}/projects/${id}`)
     .then(data => {
       setProject(data)
     })
-    .then(fetchJSON(`${BASE_URL}/project_owners/${id}`)
-      .then(data => {
-        setProjectOwner(data)
-      })
-    )
     .catch((err) => {
       console.log(err);
     })
-  },[]);
+  }, [ id ] );
 
-  console.log(project);
   return(
-    <div className='cardHolder'>
-      <div className='card'>
-          <p>Id: {project?.[0]?.id}</p>
-          <p>Title: {project?.[0]?.name}</p>
-          <p>Last Activity: {project?.[0]?.last_activity_at}</p>
-          <p>Status: {project?.[0]?.status}</p>
-          <p>Category: {assignCategory(project?.[0]?.category_id)}</p>
-          <p>{project?.[0]?.description}</p>
-          <p>Repos: {project?.[0]?.ssh_url_to_repo}</p> 
-          <p><a href={project?.[0]?.web_url}>{project?.[0]?.web_url}</a></p>
-      </div>
+    <div className='card'>
+      <p>Id: {project?.[0]?.id}</p>
+      <p>Title: {project?.[0]?.name}</p>
+      <p>Last Activity: {project?.[0]?.last_activity_at}</p>
+      <p>Status: {project?.[0]?.status}</p>
+      <p>Category: {assignCategory(project?.[0]?.category_id)}</p>
+      <p>{project?.[0]?.description}</p>
+      <p>Repos: {project?.[0]?.ssh_url_to_repo}</p> 
+      <p><a className="gitlab" href={project?.[0]?.web_url}>{project?.[0]?.web_url}</a></p>
     </div>
   )
 }

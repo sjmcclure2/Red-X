@@ -1,13 +1,13 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
+import search from './search.svg';
 import '../styles/header.css';
 // import { BASE_URL, fetchJSON } from '../App';
 
 
-function Header() {
+export default function Header() {
 
   return(
-    <div className="ruledHeader">
     <header className="Header">
       <Link to='/'>
         <h1 className='HeaderTitle'>Red-X</h1>
@@ -19,21 +19,19 @@ function Header() {
       </label>
       <div className="buttonContainer">
         <form action="/search">
-          <input
-            type="search"
-            name="query"
-            placeholder="Search..."
-            required
-          />
-          <button>Search</button>
+          <label>
+            <input
+              type="search"
+              name="query"
+              placeholder="Search..."
+              required
+            />
+          </label>
+          <button>
+            <img src={search} height="12px" alt="" />
+          </button>
         </form>
       </div>
-      {/* <Link to={'/UserProfile/'}>UserProfile</Link> */}
-
     </header>
-    {/* <hr className='Rule'/> */}
-  </div>
   )
-}
-
-export default Header;
+};

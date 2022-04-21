@@ -59,9 +59,9 @@ export default function Search() {
               <td>{assignCategory(request.category_id)}</td>
               <td>{assignPriority(request.priority)}</td>
               <td>
-                {/* <Link to={`/users/${request.user_id}`}> */}
+                <Link to={`/users/${request.user_id}`}>
                   {request.user_id}
-                {/* </Link> */}
+                </Link>
               </td>
             </tr>
           )}

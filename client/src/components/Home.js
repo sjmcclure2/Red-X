@@ -3,10 +3,10 @@ import React from 'react';
 
 function Homepage() {
   return (
-    <header className="App-header">
+    <div>
       <h1 className='home-welcome'>Welcome to Red-X</h1>
-      <h3 className='home-header-3'>A one stop shop for digital solutions.</h3>
-    </header>
+      <h3>A one stop shop for digital solutions.</h3>
+    </div>
   )
 }
 
