@@ -77,8 +77,8 @@ export default function Search() {
         <tbody>
           {results.users?.map(user =>
             <tr key={user.id}>
-              <td>{user.id}</td>
-              <td>{user.username}</td>
+              <td><Link to={`/users/${user.id}`}>{user.id}</Link></td>
+              <td><Link to={`/users/${user.id}`}>{user.username}</Link></td>
             </tr>
           )}
         </tbody>
