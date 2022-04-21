@@ -3,7 +3,6 @@ import { useParams } from 'react-router-dom';
 import { BASE_URL, fetchJSON } from '../App';
 import { assignCategory } from './Requests';
 import '../styles/card.css';
-import { BASE_URL } from '../App';
 
 export default function Project() {
   const {id} = useParams();
@@ -11,19 +10,11 @@ export default function Project() {
   const [projectOwner, setProjectOwner] = useState();
 
   useEffect(() => {
-<<<<<<< HEAD:client/src/components/Project.js
     fetchJSON(`${BASE_URL}/projects/${id}`)
     .then(data => {
       setProject(data)
     })
     .then(fetchJSON(`${BASE_URL}/project_owners/${id}`)
-=======
-    fetchData(BASE_URL + `/projects/${id}`)
-    .then(data => {
-      setProject(data)
-    })
-    .then(fetchData(BASE_URL + `/project_owners/${id}`)
->>>>>>> 42cc8e3bedbf61c0d7a55f2fa56d7b4665193b48:client/src/components/projectCard.js
       .then(data => {
         setProjectOwner(data)
       })

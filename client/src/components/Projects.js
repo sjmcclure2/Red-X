@@ -1,31 +1,15 @@
 import React, { useEffect, useState } from "react";
-<<<<<<< HEAD:client/src/components/Projects.js
 import { Link } from 'react-router-dom';
 import '../styles/projects.css'
 import { BASE_URL, fetchJSON } from "../App";
-=======
-import { Link, Route } from 'react-router-dom';
-import ProjectCard from './projectCard';
-import '../styles/projects.css';
-import {BASE_URL} from '../App';
->>>>>>> 42cc8e3bedbf61c0d7a55f2fa56d7b4665193b48:client/src/components/allProjects.js
 
 export default function Projects() {
   const [projectData, setProjectData] = useState([]);
   const [page, setPage] = useState(1);
-<<<<<<< HEAD:client/src/components/Projects.js
 
   useEffect(() => {
     fetchJSON(`${BASE_URL}/projects?limit=20&offset=${20*(page-1)}`)
     .then(data => setProjectData(data))
-=======
-  useEffect(() => {
-    fetchData(BASE_URL + `/projects?limit=20&offset=${20*(page-1)}`)
-    .then(data => {
-      console.log(projectData.length)
-      setProjectData(data)
-    })
->>>>>>> 42cc8e3bedbf61c0d7a55f2fa56d7b4665193b48:client/src/components/allProjects.js
     .catch((err) => {
       console.log(err);
     })
