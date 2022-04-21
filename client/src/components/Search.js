@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { BASE_URL, fetchJSON } from '../App';
 import { assignCategory, assignPriority } from './Requests';
+import '../styles/search.css'
 
 export default function Search() {
 

@@ -13,13 +13,18 @@
   left: 160px;
   position: absolute;
   margin-left: 250px;
-  background-color: white;
-  color: maroon;
+  background-color: lightgray;
+  color: black;
   font-size: 20px;
 }
 
 .card a{
   color:maroon;
-  text-decoration: underline;
   transform: scale(1.1);
+}
+
+.card a:hover {
+  color: white;
+  text-decoration: underline;
+  transition: all 300ms;
 }

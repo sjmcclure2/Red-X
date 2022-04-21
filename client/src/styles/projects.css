@@ -11,7 +11,7 @@
   margin: 20px 100px;
   border-radius: 5px;
   padding:5px;
-  background-color: white;
+  background-color: lightgray;
   box-shadow: 3px 3px 0px 0px;
 }
 
@@ -58,8 +58,14 @@ a {
   text-decoration: none;
 }
 
-a:hover{
-  color:maroon;
+a:hover {
+  color: maroon;
+}
+
+.linkedProjects a:hover{
+  color:white;
+  text-decoration: underline;
+  transition: all 300ms;
 }
 
 .linkedProjects a {

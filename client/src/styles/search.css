@@ -1,0 +1,36 @@
+.search h1 {
+  font-family: cursive-redx;
+  color: maroon;
+  font-size: 60px;
+  text-shadow: 2px 2px black;
+}
+
+.search h2 {
+  font-size: 35px;
+  color: maroon;
+}
+
+.search table {
+  border-style: double;
+  border-radius: 5px;
+  background-color: lightgray;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  border-color: maroon;
+}
+
+.search td, .search th {
+  border: solid maroon 1px;
+  padding: 0.5em
+}
+
+.search a {
+  color: maroon;
+}
+
+.search a:hover {
+  color: white;
+  text-decoration: underline;
+  transition: all 300ms;
+}

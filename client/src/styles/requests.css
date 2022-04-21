@@ -4,11 +4,11 @@
 
 .requests a {
   color:maroon;
-  text-decoration: underline;
 }
 
 .requests a:hover {
   color: white;
+  text-decoration: underline;
   transition: all 300ms;
 }
 
@@ -71,6 +71,7 @@
   background-color: lightgray;
   margin-bottom: 25px;
   border-radius: 5px;
+  color: black;
 }
 
 .requests td, .requests th {

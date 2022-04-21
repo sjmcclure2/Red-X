@@ -15,7 +15,7 @@ import User from './components/User';
 // import logo from './logo.svg';
 import './App.css';
 
-export const BASE_URL = 'https://red-x-server.herokuapp.com/api';
+export const BASE_URL = 'http://localhost:8080/api';
 
 export const fetchJSON = url => fetch(url).then(r => r.json());
 
