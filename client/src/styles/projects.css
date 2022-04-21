@@ -1,0 +1,67 @@
+.projects {
+  padding-inline-start: none;
+}
+
+.linkedProjects {
+  border:3px solid maroon;
+  width: 10vw;
+  display: inline-block;
+  vertical-align: top;
+  justify-content: center;
+  margin: 20px 100px;
+  border-radius: 5px;
+  padding:5px;
+  background-color: white;
+  box-shadow: 3px 3px 0px 0px;
+}
+
+.linkedProjects:hover {
+  color:maroon;
+  transform: scale(1.1);
+  transition: all 300ms;
+  box-shadow: 3px 3px 0px 0px black;
+}
+
+.listCards button {
+  border: 2px solid maroon;
+  color: maroon;
+  border-radius: 50px;
+  /* color:red; */
+  display: inline-block;
+  width: 8vw;
+  height:4.5vh;
+  margin: 20px 125px;
+  background-color: lightgray;
+}
+
+
+.listCards button:hover {
+  color:white;
+  transform: scale(1.1);
+  transition: all 300ms;
+}
+
+.listCards h1 {
+  color: maroon;
+  font-family: cursive-redx;
+  font-size: 60px;
+  text-shadow: 2px 2px black;
+}
+
+.cardContainer {
+  display: grid;
+  columns: auto auto;
+}
+
+a {
+  color:red;
+  text-decoration: none;
+}
+
+a:hover{
+  color:maroon;
+}
+
+.linkedProjects a {
+  color: maroon;
+}

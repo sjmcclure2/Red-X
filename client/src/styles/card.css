@@ -1,0 +1,25 @@
+
+.cardHolder {
+  display: grid;
+}
+
+.card {
+  border-radius: 20px;
+  border: solid 8px maroon;
+  border-style: double;
+  width: 500px;
+  min-width: 1000px;
+  top: 35%;
+  left: 160px;
+  position: absolute;
+  margin-left: 250px;
+  background-color: white;
+  color: maroon;
+  font-size: 20px;
+}
+
+.card a{
+  color:maroon;
+  text-decoration: underline;
+  transform: scale(1.1);
+}

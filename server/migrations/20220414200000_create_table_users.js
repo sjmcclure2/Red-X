@@ -8,9 +8,9 @@ exports.up = function(knex) {
     table.string('username');
     table.string('password_hash');
     table.string('email');
-    table.string('firstName');
-    table.string('lastName');
-    table.boolean('isAdmin');
+    table.string('first_name');
+    table.string('last_name');
+    table.boolean('is_admin');
   });
 };
 

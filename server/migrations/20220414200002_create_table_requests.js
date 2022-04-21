@@ -7,11 +7,12 @@ exports.up = function(knex) {
     table.increments('id');
     table.integer('user_id');
     table.foreign('user_id').references('users.id');
+    table.string('title');
     table.text('description');
     table.integer('category_id');
     table.foreign('category_id').references('categories.id');
-    table.boolean('isResolved');
     table.integer('priority');
+    table.boolean('is_resolved');
   }));
 };
 

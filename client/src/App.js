@@ -1,50 +1,57 @@
-import React, { useEffect, useState } from "react";
-import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
-import logo from './logo.svg';
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Homepage from './components/Home';
+import Header from './components/Header';
+// import Login from './components/login';
+import Projects from './components/Projects';
+import Project from "./components/Project";
+import Requests from './components/Requests';
+import Request from './components/Request';
+import NewRequest from "./components/NewRequest";
+import Search from './components/Search';
+// import Users from './components/Users';
+import User from './components/User';
+// import useToken from './components/useToken';
+// import logo from './logo.svg';
 import './App.css';
 
+export const BASE_URL = 'http://localhost:8080/api';
 
- function App () {
-  
-  const [data, setData] = useState(null);
-  const [url, setUrl] = useUrl('http://localhost:8080/api')
-  useEffect(() => {
-    fetchData(url)
-      .then(data => {
-        setData(data)
-    })
-  }, []);
+export const fetchJSON = url => fetch(url).then(r => r.json());
+
+export default function App () {
 
 
+  // const { token, setToken } = useToken();
+
+  // function isValidToken(token) {
+  //   if(token) {
+  //   if(token.token == 'test123')
+  //     return true
+  //   } else
+  //     return false
+  // }
+
+
+  // if(!token) {
+  //   return <Login url={url} setToken={setToken} />
+  // }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>{!data ? "Loading..." : data.message}</p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
       <Router>
+        <Header />
         <Routes>
-          <Route path="/"/>
-          <Route path="/"/>
-          <Route path="/"/>
+          <Route path="/" element={<Homepage />}/>
+          <Route path="/projects/" element={<Projects />} />
+          <Route path="/projects/:id" element={<Project />}/>
+          <Route path="/requests/" element={<Requests />} />
+          <Route path="/requests/:id" element={<Request />} />
+          <Route path="/requests/new" element={<NewRequest />}/>
+          {/* <Route path="/users" element={<Users />}/> */}
+          <Route path="/users/:id" element={<User />}/>
+          <Route path="/search" element={<Search />}/>
         </Routes>
       </Router>
     </div>
   );
-}
-
-
-async function fetchData(url) {
-  const response = await fetch(url)
-  let data = await response.json();
-  return data
-}
-export default App;
+};
