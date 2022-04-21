@@ -10,7 +10,7 @@
   width: 500px;
   min-width: 1000px;
   top: 35%;
-  left: 200px;
+  left: 160px;
   position: absolute;
   margin-left: 250px;
   background-color: white;
@@ -23,6 +23,3 @@
   text-decoration: underline;
   transform: scale(1.1);
 }
-/* .card:hover {
-  background: linear-gradient(to bottom right, gray, white);
-} */

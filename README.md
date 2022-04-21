@@ -8,7 +8,7 @@ Logo here: ![Image](url of image)
 4. [Contributing](#contributing)
 ---
 ## Introduction
-Red-X is a program inspired to bring together U.S. Air Force and Space Force personnel information on all on-going projects and requests into one space. We are dedicated to creating a one-stop shop flow of information on if an issue in the force has an innovative team backing it, and if not, putting that request out for a team to start today.
+Red-X is a program inspired to bring together U.S. Air Force and Space Force personnel intelligence on all on-going projects and requests into one space. We are dedicated to creating a one-stop shop flow of information on if an issue in the force has an innovative team backing it, and if not, putting that request out for a team to start today.
 
 ## Description
 A more detailed outline of the project. What does it do? Is there a high level list of features? If describing a project that has visual features, consider adding pictures or animations of the features and functionality in this section. (Screen captures.)

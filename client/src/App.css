@@ -4,9 +4,8 @@
 }
 
 body {
-  background:  #FFFBF0;
-  /* background: ; */
-  /* background-size: cover; */
+  background: url("../public/coffee.png"), #FFFBF0;
+  background-size: cover;
 }
 
 .App {
@@ -14,7 +13,8 @@ body {
 }
 
 .App-header {
-  background-color: #fffbf0;
+  background: url("../public/coffee.png") cover, #FFFBF0;
+  background-size: cover;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
