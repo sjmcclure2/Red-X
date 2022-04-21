@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { BASE_URL, fetchJSON } from '../App';
 import { assignCategory, assignPriority } from './Requests';
+import '../styles/search.css'
 
 export default function Search() {
 
@@ -58,9 +59,9 @@ export default function Search() {
               <td>{assignCategory(request.category_id)}</td>
               <td>{assignPriority(request.priority)}</td>
               <td>
-                {/* <Link to={`/users/${request.user_id}`}> */}
+                <Link to={`/users/${request.user_id}`}>
                   {request.user_id}
-                {/* </Link> */}
+                </Link>
               </td>
             </tr>
           )}
@@ -77,8 +78,8 @@ export default function Search() {
         <tbody>
           {results.users?.map(user =>
             <tr key={user.id}>
-              <td>{user.id}</td>
-              <td>{user.username}</td>
+              <td><Link to={`/users/${user.id}`}>{user.id}</Link></td>
+              <td><Link to={`/users/${user.id}`}>{user.username}</Link></td>
             </tr>
           )}
         </tbody>

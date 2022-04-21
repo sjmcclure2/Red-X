@@ -1,13 +1,13 @@
 .Header {
+  height: 10vh;
+  box-sizing: border-box;
   display: flex;
   justify-content: space-between;
   align-items: center;
   color: white;
-  height: 80px;
   border-bottom: solid 7px maroon;
   border-bottom-style:double;
-  /* font-size: 2em; */
-  background: bottom url("../../public/background.png"), lightgray;
+  background: bottom/cover url("../../public/coffee.png"), lightgray;
 }
 
 .Header h1 {
@@ -26,8 +26,6 @@
   font-family: cursive-redx;
   color: maroon;
   font-size: x-large;
-  /* margin-left:auto;
-  margin-right:auto; */
 }
 
 .Header a:hover {
@@ -36,5 +34,5 @@
 }
 
 .Header .buttonContainer {
-  padding-right: 10px;
+  margin: 10px;
 }

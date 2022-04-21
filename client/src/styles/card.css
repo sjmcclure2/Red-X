@@ -4,25 +4,27 @@
 }
 
 .card {
+  align-self: center;
   border-radius: 20px;
   border: solid 8px maroon;
   border-style: double;
-  width: 500px;
-  min-width: 1000px;
-  top: 35%;
-  left: 200px;
+  min-width: 500px;
+  max-width: 1000px;
   position: absolute;
-  margin-left: 250px;
-  background-color: white;
-  color: maroon;
+  margin: 50px;
+  background-color: lightgray;
+  color: black;
   font-size: 20px;
+  padding: 15px;
 }
 
 .card a{
   color:maroon;
-  text-decoration: underline;
   transform: scale(1.1);
 }
-/* .card:hover {
-  background: linear-gradient(to bottom right, gray, white);
-} */
+
+.card a:hover {
+  color: white;
+  text-decoration: underline;
+  transition: all 300ms;
+}

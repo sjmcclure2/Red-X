@@ -26,17 +26,18 @@ Team requirements:
 Project Requirements
 
     Test Drive your application using Cypress, Jest, React Testing Library, and Supertest
-    Create a full stack application using React, Express and a database of your choosing, though we recommend PostgreSQL
+    Create a full stack application using React, Express, and PostgreSQL
+    Seed your database with 10k entries
     Deploy your application on Heroku, AWS, or Digital Ocean
-    Seed your database with 10k entries  
     
 Extras:
+
     Test your servers under peak load using New Relic or Gatling
     Leverage a load balancer like NGINX and horizontally scale your application
 
 Final Presentation Requirements:
 
-    Present your team’s application on Friday after lunch
+    Present your team’s application on Thursday after lunch
         Check out the CAR (Challenge, Action, Result) framework to help structure your presentation
     As an audience member, come up with at least two questions for a team other than your own
         Instructors

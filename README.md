@@ -1,24 +1,81 @@
-Logo here: ![Image](url of image)
+![Red-X](/client/public/apple-touch-icon.png)
+
 ---
-*Possible Screenshot of homepage: ?*
+
 ## **Table of Contents:**
 1. [Introduction](#introduction)
 2. [Description](#description)
-3. [Installation](#installation)
-4. [Contributing](#contributing)
+3. [Requirements](#requirements)
+4. [Installation](#installation)
+5. [Contributing](#contributing)
 ---
 ## Introduction
-This will describe what Red-X is, and our idea behind what we created.
+![Homepage](/client/public/Homepage.png)
+Red-X is a program inspired to bring U.S. Air Force and Space Force personnel together to bolster intelligence on all on-going digital projects and programming requests. We are dedicated to creating a one-stop shop flow of information on project development in the force. 
 
 ## Description
-A more detailed outline of the project. What does it do? Is there a high level list of features? If describing a project that has visual features, consider adding pictures or animations of the features and functionality in this section. (Screen captures.)
+Red-X offers a forum for members to create project requests when they have identified the need for a digital solution. This workspace also provides a space for developers to collaborate on solutions to these real-world problems. 
+
+## Requirements
+
+[Node.js](https://nodejs.org/en/)
+
+[Docker](https://www.docker.com/get-started/)
 
 ## Installation
-How can another developer get your project up and running on their own? What dependencies are required? Are there environmental requirements? Be specific, and outline steps to take in order to get the project running.
+Clone the repository or download the zip file:
+
+``` sh
+git clone git@github.com:sjmcclure2/Red-X.git
 ```
-npm install the code
+
+Navigate to the server directory to set up the database and run the server:
+
+``` sh
+cd Red-X/server
+npm install
+
+# Set server environment
+export NODE_ENV='development'
+
+# Start database server Docker container
+npm run start-db
+
+# Enter Docker container Bash
+npm run view-db
 ```
-Or `inline` the code.
+
+``` bash
+# Start PostgreSQL CLI; create needed database; exit PostgreSQL
+psql -U postgres
+```
+
+``` postgresql
+CREATE DATABASE red_x;
+\q
+```
+
+``` bash
+# Exit Docker container
+exit
+```
+
+``` sh
+# Create tables and seed database
+npx knex migrate:latest
+npx knex seed:run
+
+# Start server
+npm start
+```
+
+In another terminal, navigate to the client directory to start the client:
+
+``` sh
+cd Red-X/client
+npm install
+npm start
+```
 
 ## Contributing
-We should add here that we used, aka projects/repo owners from Platform One as our source of data. 
+[Platform One](https://repo1.dso.mil/explore)

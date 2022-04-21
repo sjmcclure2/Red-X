@@ -4,11 +4,11 @@
 
 .requests a {
   color:maroon;
-  text-decoration: underline;
 }
 
 .requests a:hover {
   color: white;
+  text-decoration: underline;
   transition: all 300ms;
 }
 
@@ -71,7 +71,7 @@
   background-color: lightgray;
   margin-bottom: 25px;
   border-radius: 5px;
-  border-style: ridge;
+  color: black;
 }
 
 .requests td, .requests th {
@@ -90,4 +90,19 @@
   font-family: cursive-redx;
   font-size: 60px;
   text-shadow: 2px 2px black;  
+}
+
+.newRequest .button {
+  border: 2px solid maroon;
+  color: maroon;
+  border-radius: 50px;
+  width: 8vw;
+  height:4.5vh;
+  background-color: lightgray;
+}
+
+.newRequest .button:hover {
+  color:white;
+  transform: scale(1.1);
+  transition: all 300ms;
 }

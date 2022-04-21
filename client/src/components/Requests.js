@@ -3,9 +3,6 @@ import { Link } from 'react-router-dom';
 import { BASE_URL, fetchJSON } from '../App';
 import '../styles/requests.css';
 
-
-//id, user_id, description, category_id, is_resolved, priority
-
 export function assignCategory(category) {
   switch(category) {
     case 1:
@@ -45,21 +42,7 @@ function Requests() {
   
   useEffect(() => { 
     fetchJSON(`${BASE_URL}/requests?offset=${(page - 1) * 20}`)
-    // .then(requests => {
-    //   const promiseArray = []
-    //   console.log('before map', requests);
-    //    requests.forEach(request => {
-    //     promiseArray.push(fetchJSON(`${BASE_URL}/users/${request.user_id}`)
-    //     .then(([{username}]) => ({ ...request, username })
-    //     ))
-    //   return Promise.all(promiseArray)
-    //   })
-    // })
     .then(requests => {
-      // console.log(requests);
-      // console.log(requests[0]);
-      // console.log(requests[0].user_id);
-      // console.log(requests[0].username);
       setRequests(requests);
     })
     .catch((err) => { 
@@ -71,7 +54,7 @@ function Requests() {
     <div className='requests'>
       <h1>Requests</h1>
       <div className='requestLinkContainer'>
-        <Link to='newRequest'>Submit a new request</Link>
+        <Link to='new'>Submit a new request</Link>
       </div>
 
       <table>
@@ -94,7 +77,6 @@ function Requests() {
               <td>
                 <Link to={`/users/${request.user_id}`}>
                   {request.user_id}
-                  {/* {request.username} */}
                 </Link>
               </td>
             </tr>
@@ -108,21 +90,3 @@ function Requests() {
 }
 
 export default Requests;
-
-
-// function renderRequest(request) {
-//   return {
-//     <div>
-//     {request.description}<br/>
-//     Category: {assignCategory(request.category_id)}<br/>
-//     Priority: {assignPriority(request.priotity)}<br/>
-//     User: {getUserName(request.user_id)}<br/>
-//     </div>
-//   }
-// }
-// promiseArray = [];
-// requests.map((request) => {
-//   promiseArray.push(renderRequest(request))
-// })
-// Promise.all(promiseArray)
-// .then(setAstate(promiseArray))

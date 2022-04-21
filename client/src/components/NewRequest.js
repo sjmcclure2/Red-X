@@ -1,12 +1,13 @@
 import React from 'react';
 import { BASE_URL } from '../App';
+import '../styles/card.css'
  
 
 function NewRequest() {
 
 
 return(
-  <div className='newRequest'>
+  <div className='newRequest card'>
     <h1>New Request</h1>
     <form action={BASE_URL + '/requests'} method='post'>
       <label>
@@ -16,6 +17,17 @@ return(
           maxLength="255"
           required
           autoFocus/>
+      </label>
+      <label>
+        <p>User</p>
+        <input
+          type="number"
+          max="10000"
+          min="1"
+          name="user_id"
+          placeholder="User ID#"
+          required
+        />
       </label>
       <label>
         <p>Description</p>
@@ -49,7 +61,7 @@ return(
         </select>
       </label>
       <hr />
-      <input type="submit" value="Submit" />
+      <input className='button' type="submit" value="Submit" />
     </form>
   </div>
 )}

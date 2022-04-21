@@ -2,9 +2,15 @@ const express = require('express');
 const morgan = require('morgan');
 const cors = require('cors');
 
-const PORT = 4000;
-const HOST = 'https://red-x-server.herokuapp.com';
-const BASE_URL = `http://${HOST}:${PORT}/api`;
+const PORT = {
+  development: 8080,
+  production: 443
+}[process.env.NODE_ENV];
+const HOST = {
+  development: 'http://localhost',
+  production: 'https://red-x-server.herokuapp.com'
+}[process.env.NODE_ENV];
+const BASE_URL = `${HOST}:${PORT}/api`;
 module.exports.BASE_URL = BASE_URL;
 
 const api = require('./routes/api');
@@ -31,5 +37,5 @@ app.use((req, res) => {
 });
 
 app.listen(process.env.PORT || PORT, () => {
-  console.log(`API server running at port ${PORT}`)
+  console.log(`API server running at ${BASE_URL}`)
 });
